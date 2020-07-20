@@ -1,0 +1,31 @@
+
+.nav {
+  grid-area: nav;
+  background-color: #334663;
+  padding: 10px 20px;
+  min-height: 100vh;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s;
+
+}
+.nav__item:nth-last-child(1){
+  padding-bottom: 0;
+}
+.nav__link:hover{
+  transition: 0.2s;
+  color:rgb(139, 139, 139);
+}
+.nav__item__last {
+  padding-top: 20px;
+}
+.nav__item {
+  padding-bottom: 7px;
+}
+.nav__item .active_ln{
+  transition: 0.2s;
+  color:rgb(139, 139, 139);
+}

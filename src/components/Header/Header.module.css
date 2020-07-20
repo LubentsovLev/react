@@ -1,0 +1,14 @@
+.header {
+  grid-area: header;
+  background-color: #1a3358;
+  padding: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header__img {
+  height: auto;
+  width: 50px;
+}
+

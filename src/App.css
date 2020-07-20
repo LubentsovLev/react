@@ -1,0 +1,47 @@
+html{
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+  box-sizing:inherit;
+}
+body{
+  font-family:rubik;
+  background-color: #fff;
+  color:#48384C;
+}
+ul,li{
+  list-style:none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  display:inline;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav content content";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr 11fr;
+  margin: 0 auto;
+}
+
+
+
+.app__wrapper__content{
+ padding: 10px; 
+}
