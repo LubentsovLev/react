@@ -1,10 +1,18 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import MyPost from "./MyPost/MyPost";
+import { reduxForm, Field } from "redux-form";
+import { required, maxLengthCreator } from "../../../utils/validators/validators";
+import { Textarea } from "../../common/formsControls/formsControls";
 
-const MyPosts = (props) => {
-  let myPostInfoElements = props.myPostInfo.map((info) => (
+
+
+
+
+const MyPosts = React.memo( (props) => {
+  let myPostInfoElements = [...props.myPostInfo].reverse().map((info) => (
     <MyPost
+      key={info.id}
       post={info.post}
       id={info.id}
       img={info.img}
@@ -14,32 +22,44 @@ const MyPosts = (props) => {
     />
   ));
 
-  let newPostElement = React.createRef();
 
-  let onAddPost = () => {
-    props.addPost()
-  };
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewsPostText(text)
+  let onAddPost = (values) => {
+    props.addPost(values.myPostText);
   };
 
   return (
     <div className={s.MyPosts}>
       <h1 className={s.items__h1}> my posts </h1>
-      <div className={s.items__form__inner}>
-        <textarea
-          onChange={onPostChange}
-          ref={newPostElement}
-          value={props.newPostText}
-        />
-        <button onClick={onAddPost} className={s.btn}>
-          Add post
-        </button>
-      </div>
+      <AddNewPostReduxForm onSubmit={onAddPost} />
       <div className={s.items__inner}>{myPostInfoElements}</div>
     </div>
   );
+});
+
+let maxLength =  maxLengthCreator(10)
+
+const addNewPostForm = (props) => {
+  return (
+    <form className={s.items__form__inner} onSubmit={props.handleSubmit}>
+      <Field
+        placeholder="write message"
+        name={"myPostText"}
+        component={Textarea}
+        className={s.textarea}
+        validate = {[required,maxLength ] }
+      />
+      <button  className={s.btn}>
+        Add post
+      </button>
+    </form>
+  );
 };
+
+const AddNewPostReduxForm = reduxForm({
+  form: "myPostsForm",
+})(addNewPostForm);
+
+
+
 
 export default MyPosts;

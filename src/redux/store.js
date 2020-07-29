@@ -119,6 +119,7 @@ let store = {
       ],
       newDialogText: "",
     },
+    
     sidebar: {}
   },
   _callSubscriber() {

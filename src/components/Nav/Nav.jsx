@@ -16,20 +16,26 @@ const Nav = () => {
         </NavLink>
       </div>
       <div className={s.nav__item}>
-        <NavLink className={s.nav__link} to="news" activeClassName={s.active_ln}>
+        <NavLink className={s.nav__link} to="/news" activeClassName={s.active_ln}>
           News
         </NavLink>
       </div>
       <div className={s.nav__item}>
-        <NavLink className={s.nav__link} to="music" activeClassName={s.active_ln}>
+        <NavLink className={s.nav__link} to="/music" activeClassName={s.active_ln}>
           Music
+        </NavLink>
+      </div>
+      <div className={(s.nav__item +' ' +s.nav__item__last)}>
+        <NavLink className={s.nav__link} to="/users" activeClassName={s.active_ln}>
+          Users
         </NavLink>
       </div>
       <div className={(s.nav__item +' ' +s.nav__item__last)}>
         <NavLink className={s.nav__link} to="Settings" activeClassName={s.active_ln}>
           Settings
         </NavLink>
-      </div>
+        </div>
+        
     </nav>
   );
 };

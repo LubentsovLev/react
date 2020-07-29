@@ -1,37 +1,60 @@
 import React from "react";
 import s from "./Dialogs.module.css";
 import DialogMessage from "./DialogMessage/DialogMessage";
-import { NavLink } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import DialogContact from "./DialogContact/DialogContact";
+import { reduxForm, Field } from "redux-form";
+import { Textarea } from "../common/formsControls/formsControls";
+import { required,maxLengthCreator } from "../../utils/validators/validators";
 
+let maxLength = maxLengthCreator(50);
 
+const DialogsForm = (props) => {
+
+  return (
+    <form className={s.textarea__inner} onSubmit={props.handleSubmit}>
+      <Field
+        className={s.textarea}
+        name={"AddDialogField"}
+        placeholder="Write message"
+        // onChange={onDialogChange}
+        //ref={newMessageElement}
+        component={Textarea}
+        validate={[required, maxLength]}
+      ></Field>
+      <button className={s.textarea}> Send message</button>
+    </form>
+  );
+};
+
+const DialogsReduxForm = reduxForm({
+  form: "AddDialog",
+})(DialogsForm);
 const Dialogs = (props) => {
+  const addDialogField = (values) => {
+    props.addDialogActionCreator(values.AddDialogField);
+  };
 
-  let state = props.dialogsPage;
-
-  let dialogsDataElements = state.dialogsPage.dialogsData.map((dialog) => (
-    <DialogContact name={dialog.name} id={dialog.id} img={dialog.img} />
-  ));
-
-  let dialogsMessageElements = state.dialogsPage.dialogsMessage.map((message) => (
-    <DialogMessage
-      id={message.id}
-      name={message.name}
-      message={message.message}
-      img={message.img}
+  let dialogsDataElements = props.dialogsPage.dialogsData.map((dialog) => (
+    <DialogContact
+      key={dialog.id}
+      name={dialog.name}
+      id={dialog.id}
+      img={dialog.img}
     />
   ));
 
-  let newMessageElement = React.createRef();
-  let addDialog = () => {
-    //props.dispatch(addDialogActionCreator());
-    props.addDialogActionCreator()
-  };
-  let onDialogChange = () => {
-    let text = newMessageElement.current.value;
-    props.updateNewsDialogActionCreator(text)
-    //props.dispatch(updateNewsDialogActionCreator(text));
-  };
+  let dialogsMessageElements = props.dialogsPage.dialogsMessage.map(
+    (message) => (
+      <DialogMessage
+        key={message.id}
+        id={message.id}
+        name={message.name}
+        message={message.message}
+        img={message.img}
+      />
+    )
+  );
 
   return (
     <div>
@@ -41,15 +64,8 @@ const Dialogs = (props) => {
           <div>{dialogsDataElements}</div>
         </div>
         <div className={s.col_2}>
+          <DialogsReduxForm onSubmit={addDialogField} />
           {dialogsMessageElements}
-          <div className={s.textarea__inner}>
-            <textarea
-              onChange={onDialogChange}
-              ref={newMessageElement}
-              value={props.newDialogText}
-            />
-            <button onClick={addDialog}>Send message</button>
-          </div>
         </div>
       </div>
     </div>

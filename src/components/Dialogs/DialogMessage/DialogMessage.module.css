@@ -19,13 +19,19 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0 auto;
     margin-bottom: 30px;
+    max-width: 900px;
+    background-color: rgb(116, 239, 255);
+    padding: 15px;
+    border-radius: 15px;
 }
 .col_2_item:last-child{
     margin-bottom: 0;
 }
 .col_2_item_logo_inner{
-    width: 30%;
+    width: 100%;
+    max-width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +41,13 @@
     padding: 10px;
     border-radius: 15px;
     background-color: #fff;
-    width: 70%;
+    width: 80%;
+    margin: 0 auto;
+}
+.col_2_item_text p {
+    width: auto;
+    display: block;
+    word-wrap: break-word;
 }
 
 .item__inner{

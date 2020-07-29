@@ -1,7 +1,6 @@
 const ADD_DIALOG = "ADD-DIALOG";
-const UPDATE_NEWS_DIALOG_TEXT = "UPDATE-NEWS-DIALOG-TEXT";
 
-let initialState ={
+let initialState = {
   dialogsData: [
     {
       id: 1,
@@ -64,39 +63,36 @@ let initialState ={
       img: "https://data.whicdn.com/images/315945007/original.png",
     },
   ],
-  newDialogText: "",
-}
+};
 
 const dialogsPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_DIALOG":
-      let newDialog = {
-        id: 6,
-        name: "Petua",
-        message: state.newDialogText,
-        img: "https://png-library.net/images/obama-face-png-6.png",
+      return {
+        ...state,
+        dialogsData: [...state.dialogsData],
+        dialogsMessage: [
+          ...state.dialogsMessage,
+          {
+            id: 6,
+            name: "Petua",
+            message: action.AddDialogField,
+            img: "https://png-library.net/images/obama-face-png-6.png",
+          },
+        ],
       };
-      state.dialogsMessage.push(newDialog);
-      state.newDialogText = "";
-      return state;
-    case "UPDATE_NEWS_DIALOG_TEXT":
-      state.newDialogText = action.newDialogText;
-      return state;
+    
     default:
       return state;
   }
 };
 
-export const addDialogActionCreator = () => {
-    return {
-      type: "ADD_DIALOG",
-    };
+export const addDialogActionCreator = (AddDialogField) => {
+  return {
+    type: "ADD_DIALOG",
+    AddDialogField
   };
-  export const updateNewsDialogActionCreator = (text) => {
-    return {
-      type: "UPDATE_NEWS_DIALOG_TEXT",
-      newDialogText: text,
-    };
-  };
-  
+};
+
+
 export default dialogsPageReducer;

@@ -1,5 +1,9 @@
+import { usersAPI, profileAPI } from "../api/api";
+
 const ADD_POST = "ADD-POST";
-const UPDATE_NEWS_POST_TEXT = "UPDATE-NEWS-POST-TEXT";
+const SET_USER_PROFILE = "SET_USER_PROFILE";
+const SET_STATUS = "SET_STATUS";
+const DELETE_POST = "DELETE_POST";
 
 let initialState = {
   profileInfo: [
@@ -46,41 +50,82 @@ let initialState = {
       dislikecount: "5",
     },
   ],
-  newPostText: "",
-}
+  profile: null,
+  status: "",
+};
 
 const profilePageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_POST":
+    case "ADD_POST": {
       let newPost = {
         id: 5,
         post: "lorem lorem post",
-        message: state.newPostText,
+        message: action.myPostText,
         img: "https://png-library.net/images/obama-face-png-6.png",
         likecount: "20",
         dislikecount: "5",
       };
-      state.myPostInfo.push(newPost);
-      state.newPostText = "";
-      return state;
-    case "UPDATE_NEWS_POST_TEXT":
-      state.newPostText = action.newPostText;
-      return state;
+      let stateCopy = { ...state };
+      stateCopy.myPostInfo = [...state.myPostInfo];
+      stateCopy.myPostInfo.push(newPost);
+      stateCopy.newPostText = "";
+      return stateCopy;
+    }
+    case "SET_USER_PROFILE": {
+      return { ...state, profile: action.profile };
+    }
+    case "SET_STATUS": {
+      return { ...state, status: action.status };
+    }
+    case "DELETE_POST": {
+      return { ...state, myPostInfo: state.myPostInfo.filter( p => p.id != action.postId) };
+    }
     default:
       return state;
   }
 };
 
-export const addPostActionCreator = () => {
+export const addPostActionCreator = (myPostText) => {
   return {
     type: "ADD_POST",
+    myPostText
   };
 };
-export const updateNewsPostActionCreator = (text) => {
+export const setUserProfile = (profile) => {
   return {
-    type: "UPDATE_NEWS_POST_TEXT",
-    newPostText: text,
+    type: "SET_USER_PROFILE",
+    profile,
   };
+};
+export const setStatus = (status) => {
+  return {
+    type: "SET_STATUS",
+    status,
+  };
+};
+
+
+export const deletePost = (postId) => {
+  return {
+    type: "DELETE_POST",
+    postId,
+  };
+};
+
+
+export const getUserProfile = (userId) => async (dispath) => {
+  let response = await usersAPI.getProfile(userId);
+  dispath(setUserProfile(response.data));
+};
+export const getUserStatus = (userId) => async (dispath) => {
+  let response = await profileAPI.getStatus(userId);
+  dispath(setStatus(response.data));
+};
+export const updateUserStatus = (status) => async (dispath) => {
+  let response = await profileAPI.updateUserStatus(status);
+  if (response.data.resultCode === 0) {
+    dispath(setStatus(status));
+  }
 };
 
 export default profilePageReducer;

@@ -46,7 +46,7 @@
   margin: 0;
   margin-bottom: 10px;
 }
-.items__form__inner textarea {
+.textarea {
   border: 1px solid rgb(201, 201, 201);
   border-radius: 5px;
   margin-top: 10px;
@@ -57,7 +57,7 @@
   outline: none;
   transition: 0.3s ;
 }
-.items__form__inner textarea:hover {
+.textarea:hover {
   transition: 0.3s ;
   background-color: rgb(213, 228, 239);
 }

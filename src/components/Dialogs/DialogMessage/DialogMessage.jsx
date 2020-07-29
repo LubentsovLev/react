@@ -13,7 +13,11 @@ const DialogMessage = (props) => {
           <img className={s.col_2_item_logo} src={img} alt="" />
           <p className={s.col_2_item_name}>{props.name}</p>
         </div>
-        <div className={s.col_2_item_text}>{props.message}</div>
+        <div className={s.col_2_item_text}>
+          <p>
+          {props.message}
+          </p>
+          </div>
       </div>
     </div>
   );
