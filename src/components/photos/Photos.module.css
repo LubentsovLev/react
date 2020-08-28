@@ -1,0 +1,86 @@
+.selected {
+  font-weight: 700;
+}
+
+.photos__inner {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: -5px;
+}
+.photo__inner {
+  width: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.photo__photo {
+  max-width: 100%;
+  display: block;
+  max-height: 100%;
+  max-height: 400px;
+  background-color: rgb(206, 240, 255);
+}
+.photographer {
+  position: absolute;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.4s;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0,0.5);
+  padding: 30px 5px;
+}
+.photographer a {
+  color: rgb(255, 255, 255);
+  display: block;
+  transition: all 0.3s;
+  font-size: 25px;
+  height:  auto;
+  cursor: pointer;
+  text-align: center;
+}
+.photographer span{
+  display: block;
+}
+.photographer a:hover {
+  color: rgb(143, 188, 255);
+  transition: all 0.3s;
+}
+.photographer:hover {
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.4s;
+}
+.btn{
+  padding: 15px 5px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(138, 253, 234);
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 15px;
+  color: rgb(48, 46, 46);
+  max-width: 200px;
+  height: auto;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: 0.3s;
+  outline: none;
+  text-align: center;
+  margin: 0 auto;
+}
+.btn__inner{
+  display: flex;
+}
+

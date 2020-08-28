@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import s from "./ProfileInfo.module.css";
-import Preloader from "../../common/preloader/preloader";
 
 const ProfileStatuWithHocks = (props) => {
   let [editMode, seteditMode] = useState(false);
@@ -27,6 +25,7 @@ const ProfileStatuWithHocks = (props) => {
     <div className="">
       {!editMode && (
         <div className="">
+          <strong>Status:  </strong>
           <span onDoubleClick={activateEditMode}>{props.status || "no"}</span>
         </div>
       )}

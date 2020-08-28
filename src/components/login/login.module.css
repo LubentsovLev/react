@@ -1,4 +1,7 @@
-form button {
+.inner{
+  max-width: 200px;
+}
+.inner button {
   border-radius: 5px;
   width: 100%;
   max-width: 200px;
@@ -9,18 +12,18 @@ form button {
   cursor: pointer;
   margin-top: 20px;
 }
-form button:hover {
+.inner button:hover {
   transition: 0.3s;
   background-color: rgb(213, 228, 239);
 }
 .check {
-  width: auto !important;
-  margin: 5px 10px  5px 0 !important;
-  height: 20px !important;
-  width: 20px !important;
+  width: auto ;
+  margin: 5px 10px  5px 0 ;
+  height: 20px ;
+  width: 20px ;
   transition: 0.3s;
-  background-color: rgb(165, 238, 150) !important;
-  border: 4px solid rgb(165, 238, 150) !important;
+  background-color: rgb(165, 238, 150) ;
+  border: 4px solid rgb(165, 238, 150) ;
 }
 .check:hover {
   transition: 0.3s;
@@ -39,5 +42,31 @@ form button:hover {
   margin: 7px 0;
 
   text-align: center;
+}
+.sign{
+  display: block;
+  transition: 0.3s;
+  background-color: rgb(165, 238, 150) ;
+  border-radius:5px;
+  padding: 5px;
+}
+.sign:hover{
+  background-color: #76a9ea;
+  color: #fff;
+}
+.sign__inner{
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: rgb(255, 235, 153);
+  border-radius:5px;
+  color: #76a9ea;
+}
+h6{
+  width: 100%;
+  margin-bottom: 7px;
+
 }
 

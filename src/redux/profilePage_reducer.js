@@ -1,10 +1,11 @@
 import { usersAPI, profileAPI } from "../api/api";
+import { stopSubmit } from "redux-form";
 
-const ADD_POST = "ADD-POST";
-const SET_USER_PROFILE = "SET_USER_PROFILE";
-const SET_STATUS = "SET_STATUS";
-const DELETE_POST = "DELETE_POST";
-
+const ADD_POST = "PROFILE/ADD-POST";
+const SET_USER_PROFILE = "PROFILE/SET_USER_PROFILE";
+const SET_STATUS = "PROFILE/SET_STATUS";
+const DELETE_POST = "PROFILE/DELETE_POST";
+const SAVE_PHOTOS_SUCCESS = "PROFILE/SAVE_PHOTOS_SUCCESS";
 let initialState = {
   profileInfo: [
     {
@@ -56,7 +57,7 @@ let initialState = {
 
 const profilePageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_POST": {
+    case ADD_POST: {
       let newPost = {
         id: 5,
         post: "lorem lorem post",
@@ -71,14 +72,17 @@ const profilePageReducer = (state = initialState, action) => {
       stateCopy.newPostText = "";
       return stateCopy;
     }
-    case "SET_USER_PROFILE": {
+    case SET_USER_PROFILE: {
       return { ...state, profile: action.profile };
     }
-    case "SET_STATUS": {
+    case SET_STATUS: {
       return { ...state, status: action.status };
     }
-    case "DELETE_POST": {
+    case DELETE_POST: {
       return { ...state, myPostInfo: state.myPostInfo.filter( p => p.id != action.postId) };
+    }
+    case SAVE_PHOTOS_SUCCESS: {
+      return { ...state, profile : {...state.profile, photos:action.photos}  };
     }
     default:
       return state;
@@ -87,31 +91,35 @@ const profilePageReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = (myPostText) => {
   return {
-    type: "ADD_POST",
+    type: ADD_POST,
     myPostText
   };
 };
 export const setUserProfile = (profile) => {
   return {
-    type: "SET_USER_PROFILE",
+    type: SET_USER_PROFILE,
     profile,
   };
 };
 export const setStatus = (status) => {
   return {
-    type: "SET_STATUS",
+    type: SET_STATUS,
     status,
   };
 };
-
-
 export const deletePost = (postId) => {
   return {
-    type: "DELETE_POST",
+    type: DELETE_POST,
     postId,
   };
 };
-
+export const savePhotoSuccess = (photos) => {
+  return {
+    type: SAVE_PHOTOS_SUCCESS,
+    photos,
+  };
+};
+  
 
 export const getUserProfile = (userId) => async (dispath) => {
   let response = await usersAPI.getProfile(userId);
@@ -122,9 +130,28 @@ export const getUserStatus = (userId) => async (dispath) => {
   dispath(setStatus(response.data));
 };
 export const updateUserStatus = (status) => async (dispath) => {
+  try {
   let response = await profileAPI.updateUserStatus(status);
   if (response.data.resultCode === 0) {
     dispath(setStatus(status));
+  }
+  }catch(error){
+  }
+};
+export const savePhoto = (file) => async (dispath) => {
+  let response = await profileAPI.saveProto(file);
+  if (response.data.resultCode === 0) {
+    dispath(savePhotoSuccess(response.data.data.photos));
+  }
+};
+export const saveProfile = (Profile) => async (dispath,getState) => {
+  const userId =  getState().auth.userId;
+  const response = await profileAPI.saveProfile(Profile);
+  if (response.data.resultCode === 0) {
+    dispath(getUserProfile(userId));
+  } else {
+    dispath(stopSubmit("edit-profile",{_error:   response.data.messages[0]  }))
+    return Promise.reject(response.data.messages[0])
   }
 };
 

@@ -1,4 +1,4 @@
-const ADD_DIALOG = "ADD-DIALOG";
+const ADD_DIALOG = "DIALOG/ADD-DIALOG";
 
 let initialState = {
   dialogsData: [
@@ -67,7 +67,7 @@ let initialState = {
 
 const dialogsPageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_DIALOG":
+    case ADD_DIALOG:
       return {
         ...state,
         dialogsData: [...state.dialogsData],
@@ -89,7 +89,7 @@ const dialogsPageReducer = (state = initialState, action) => {
 
 export const addDialogActionCreator = (AddDialogField) => {
   return {
-    type: "ADD_DIALOG",
+    type: ADD_DIALOG,
     AddDialogField
   };
 };

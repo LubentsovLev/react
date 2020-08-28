@@ -6,7 +6,7 @@ import {
   setCurrentPage,
   toggleFollowingProgress,
   getUsers,
-} from "../../redux/usersPage_reduser";
+} from "../../redux/usersPage_reducer";
 import Users from "./Users";
 import Preloader from "../common/preloader/preloader";
 import { WithAuthRedirect } from "../../hoc/WithAuthRedirect";
@@ -25,10 +25,14 @@ class UsersContainer extends React.Component {
     let {currentPage,pageSize}= this.props
     this.props.getUsers(currentPage, pageSize);
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.isAuth != prevProps.isAuth) {
+    }
+  }
 
   onPageChanged = (currentPage) => {
     let {pageSize}= this.props
-    this.props.getUsers(currentPage, pageSize);
+    this.props.getUsers(currentPage, pageSize); 
   };
 
   render() {
@@ -44,6 +48,8 @@ class UsersContainer extends React.Component {
           follow={this.props.follow}
           onPageChanged={this.onPageChanged}
           followingInProgress={this.props.followingInProgress}
+          isFetching={this.props.isFetching}
+          isAuth={this.props.isAuth}
         />
       </>
     );
@@ -69,6 +75,7 @@ let mapSateToProps = (state) => {
     currentPage: getCurrentPage(state),
     isFetching: getIsFetching(state),
     followingInProgress: getFollowingInProgress(state),
+    isAuth: state.auth.isAutn,
   };
 };
 

@@ -1,5 +1,7 @@
 .info {
   padding: 30px 0;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .content__img {
   margin: 0 auto;
@@ -26,7 +28,114 @@
 .logo__descr {
   padding-bottom: 20px;
 }
-.name__inner{
+.name__inner {
   width: 100%;
+}
+.contact {
+  padding-left: 10px;
+}
+.button_ed,
+.button_sv {
+  padding: 15px 5px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(138, 253, 234);
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 15px;
+  color: rgb(48, 46, 46);
+  max-width: 200px;
+  height: auto;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: 0.3s;
+  outline: none;
+}
+.button_ed:hover {
+  transition: 0.3s;
+  background-color: rgb(213, 228, 239);
+}
+.button_ed {
+}
+.button_sv {
+}
+.edit_item {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.edit_item strong {
+  font-size: 19px;
+}
+.edit_item span {
+  font-size: 17px;
+  color: #5700f8;
+}
+.info input[type="file"] {
+  padding: 15px 5px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(138, 253, 234);
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 15px;
+  color: rgb(48, 46, 46);
+  max-width: 200px;
+  height: auto;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: 0.3s;
+  outline: none;
+}
+.input__wrapper {
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+  text-align: center;
+}
 
+.input__file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.input__file_icon_wrapper {
+  height: 60px;
+  width: 60px;
+  margin-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-right: 1px solid #fff;
+}
+
+.input__file_button_text {
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.input__file_button {
+  width: 100%;
+  max-width: 290px;
+  height: 60px;
+  background: rgb(102, 102, 102);
+  color: #76a9ea;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.forms__info {
+  max-width: 500px;
 }

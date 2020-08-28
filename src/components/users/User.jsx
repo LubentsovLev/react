@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import userPhoto from "../../assets/img/pinkman.jpg";
 import s from "./Users.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
+import Preloader from "../common/preloader/preloader";
 
-let User = ({user, followingInProgress, unfollow, follow}) => {
+let User = ({
+  user,
+  followingInProgress,
+  unfollow,
+  follow,
+  isFetching,
+  isAuth,
+}) => {
+  useEffect(() => {}, [isAuth]);
   return (
     <div key={user.id}>
       <div className={s.item}>
@@ -16,26 +25,36 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
               />
             </NavLink>
           </div>
-          {user.followed ? (
-            <button
-              disabled={followingInProgress.some((id) => id === user.id)}
-              onClick={() => {
-                unfollow(user.id);
-              }}
-              className={s.follow}
-            >
-              Unfollow
-            </button>
+          {isAuth ? (
+            user.followed ? (
+              <button
+                disabled={followingInProgress.some((id) => id === user.id)}
+                onClick={() => {
+                  unfollow(user.id);
+                }}
+                className={s.follow}
+              >
+                Unfollow
+              </button>
+            ) : (
+              <button
+                disabled={followingInProgress.some((id) => id === user.id)}
+                onClick={() => {
+                  follow(user.id);
+                }}
+                className={s.follow}
+              >
+                Follow
+              </button>
+            )
           ) : (
+            <NavLink to={"/profile/" + user.id}>
             <button
-              disabled={followingInProgress.some((id) => id === user.id)}
-              onClick={() => {
-                follow(user.id);
-              }}
               className={s.follow}
             >
               Follow
             </button>
+            </NavLink>
           )}
         </div>
         <div className={s.main__inner}>

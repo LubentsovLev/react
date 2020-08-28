@@ -1,5 +1,8 @@
 .container{
-  max-width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top:40px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -14,6 +17,11 @@
   border-radius: 15px;
 
 }
+@media (max-width: 600px) {
+  .item{
+    flex-wrap: wrap;
+  }
+}
 
 .icon__inner{
   margin-right: 40px;
@@ -21,6 +29,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom:5px;
 }
 .img__inner{
   height: 100px;
@@ -118,4 +127,10 @@
 }
 .pagin span{
   text-align: center;
+}
+.follow:disabled{
+  background-color: rgb(139, 139, 139);
+  color: #fff;
+  transition: all 0.3s;
+  cursor: not-allowed;
 }

@@ -123,7 +123,6 @@ let store = {
     sidebar: {}
   },
   _callSubscriber() {
-    console.log("lol");
   },
   getState() {
     return this._state;

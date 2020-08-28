@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import s from "./Pagintor.module.css";
+import s from "./Paginator.module.css";
 import cn from "classnames";
 
-let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
+let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 5}) => {
   let pagesCount = Math.ceil(totalItemsCount  / pageSize);
 
   let pages = [];
@@ -20,14 +20,17 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portion
   return ( 
     <div className={s.inner}>
       <div className={s.pagin}>
-      { portionNumber > 1 &&
+        <div className={s.btn}>
+        { portionNumber > 1 &&
         <button className={s.btn__prev} onClick={() => { setPortionNumber(portionNumber - 1) }}>PREV</button> }
+        </div>
         {pages
         .filter(p => p >= leftPortionPageNumber && p<=rightPortionPageNumber)
         .map((p) => {
           return (
             <span
-              onClick={(e) => {
+            key={p}
+              onClick={() => {
                 onPageChanged(p);
               }}
               className={ cn ({
@@ -39,9 +42,11 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portion
             </span>
           );
         })}
-
+        <div className={s.btn}>
             { portionCount > portionNumber &&
             <button className={s.btn__next} onClick={() => { setPortionNumber(portionNumber + 1) }}>NEXT</button> }
+        </div>
+            
 
       </div>
     </div>

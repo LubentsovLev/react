@@ -4,11 +4,10 @@ import { connect } from "react-redux";
 import { logOut } from "../../redux/auth-reduser.js";
 
 class HeaderContainer extends React.Component {
- 
-
   render() {
+
     return (
-        <Header {...this.props} />
+        <Header {...this.props} photo={this.props.photo}  />
     );
   }
 
@@ -16,9 +15,9 @@ class HeaderContainer extends React.Component {
 
 
 const mapSateToProps = (state) => ({
-  
   isAutn:state.auth.isAutn,
-  login:state.auth.login
+  login:state.auth.login,
+  photo:state.profilePage.profile
 });
 
-export default connect(mapSateToProps, { logOut })(HeaderContainer);
+export default connect(mapSateToProps, { logOut  })(HeaderContainer);

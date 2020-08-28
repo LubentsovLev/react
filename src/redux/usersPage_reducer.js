@@ -2,13 +2,13 @@
 import {updateObjectInArray} from "../utils/objext_helpers.js"
 import { usersAPI } from "../api/api";
 
-const FOLLOW = "FOLLOW";
-const UNFOLLOW = "UNFOLLOW";
-const SET_USER = "SET_USER";
-const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
-const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
-const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
+const FOLLOW = "USERS/FOLLOW";
+const UNFOLLOW = "USERS/UNFOLLOW";
+const SET_USER = "USERS/SET_USER";
+const SET_CURRENT_PAGE = "USERS/SET_CURRENT_PAGE";
+const SET_TOTAL_USERS_COUNT = "USERS/SET_TOTAL_USERS_COUNT";
+const TOGGLE_IS_FETCHING = "USERS/TOGGLE_IS_FETCHING";
+const TOGGLE_IS_FOLLOWING_PROGRESS = "USERS/TOGGLE_IS_FOLLOWING_PROGRESS";
 
 let initialState = {
   users: [],
@@ -54,43 +54,43 @@ const usersPageReducer = (state = initialState, action) => {
 
 export const followSuccess = (userId) => {
   return {
-    type: "FOLLOW",
+    type: FOLLOW,
     userId,
   };
 };
 export const unfollowSuccess = (userId) => {
   return {
-    type: "UNFOLLOW",
+    type: UNFOLLOW,
     userId,
   };
 };
 export const setUsers = (users) => {
   return {
-    type: "SET_USER",
+    type: SET_USER,
     users,
   };
 };
 export const settotalItemsCount  = (totalItemsCount ) => {
   return {
-    type: "SET_TOTAL_USERS_COUNT",
+    type: SET_TOTAL_USERS_COUNT,
     totalItemsCount ,
   };
 };
-export const setCurrentPage = (currentPage) => {
+export const setCurrentPage = (currentPage ) => {
   return {
-    type: "SET_CURRENT_PAGE",
+    type: SET_CURRENT_PAGE,
     currentPage,
   };
 };
 export const toggleIsFetching = (isFetching) => {
   return {
-    type: "TOGGLE_IS_FETCHING",
+    type: TOGGLE_IS_FETCHING,
     isFetching,
   };
 };
 export const toggleFollowingProgress = (isFetching, userId) => {
   return {
-    type: "TOGGLE_IS_FOLLOWING_PROGRESS",
+    type: TOGGLE_IS_FOLLOWING_PROGRESS,
     isFetching,
     userId,
   };

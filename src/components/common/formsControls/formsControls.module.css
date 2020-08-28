@@ -17,18 +17,20 @@
 .inner {
   width: 100%;
 }
-.inner span,
-.inner_input span {
+.error {
   color: rgb(255, 65, 65);
-  padding: 5px 5px;
   display: block;
+}
+.text {
+  color: rgb(49, 49, 49);
+  font-weight: 700;
+  font-size: 20px;
 }
 .forms input {
   transition: 0.3s;
   margin: 5px 0;
-  height: 35px;
   width: 100%;
-  max-width: 200px;
+  padding: 10px 5px;
   border-radius: 5px;
   border: 1px solid rgb(143, 141, 141);
 }
@@ -37,10 +39,10 @@
   border: 1px solid rgb(255, 65, 65);
 }
 
-.form_summary_error{
+.form_summary_error {
   border: 1px solid rgb(255, 65, 65);
   padding: 5px;
+  margin: 20px 0;
   color: rgb(255, 65, 65);
-}
-span {
+  display: block;
 }

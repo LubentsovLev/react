@@ -12,14 +12,17 @@ let Users = ({
   followingInProgress,
   unfollow,
   follow,
+  isAuth,
   ...props
 }) => {
+  
   let pagesCount = Math.ceil(totalItemsCount  / pageSize);
 
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+  
   return (
     <div className={s.container}>
       <Paginator
@@ -31,12 +34,14 @@ let Users = ({
 
      {
        users.map((u) =>
+       
         <User
           user={u}
           key={u.id}
           followingInProgress={followingInProgress}
           unfollow={unfollow}
           follow={follow}
+          isAuth={isAuth}
         />) 
      }
       <Paginator

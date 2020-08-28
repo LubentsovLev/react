@@ -3,7 +3,9 @@
   align-items: flex-start;
   justify-content: space-between;
   min-height: 100vh;
-
+  padding-top: 10px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .col_1 {
   width: 200px;
@@ -16,14 +18,17 @@
 }
 
 .col_2 {
-  width: calc(100% - 200px);
+  width: 100%;
   background-color: rgb(158, 157, 157);
   min-height: 100vh;
   padding: 15px;
   border-radius: 15px;
-
 }
-
+@media (max-width: 600px) {
+  .col_1{
+    display: none;
+  }
+}
 .textarea {
   background-color: #fff;
   border: 1px solid rgb(201, 201, 201);
@@ -53,7 +58,7 @@ textarea:hover {
   cursor: pointer;
   transition: 0.3s;
   height: 50px;
-  }
+}
 .col_2 button:hover {
   background-color: rgb(213, 228, 239);
   transition: 0.3s;
@@ -67,5 +72,4 @@ textarea:hover {
   max-width: 900px;
   margin-bottom: 50px;
   flex-direction: column;
-  
 }

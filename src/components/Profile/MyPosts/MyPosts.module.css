@@ -9,6 +9,8 @@
 }
 .MyPosts {
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .items__h1 {
