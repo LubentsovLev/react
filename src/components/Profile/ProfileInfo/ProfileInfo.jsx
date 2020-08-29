@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./ProfileInfo.module.css";
 import Preloader from "../../common/preloader/preloader";
 import ProfileStatuWithHocks from "./ProfileStatuWithHocks";
-import userPhoto from "../../../assets/img/pinkman.jpg";
+import userPhoto from "../../../assets/img/logo.svg";
 import savePhoto from "../../../assets/img/save-file.svg";
 import ProfileDataForm from "./ProfileDataForm";
 

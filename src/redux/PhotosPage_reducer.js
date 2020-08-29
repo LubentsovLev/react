@@ -6,11 +6,13 @@ const TOGGLE_IS_FETCHING = "MTOGGLE_IS_FETCHING";
 const SET_PIXELS = "PHOTOS/SET_PIXELS";
 const SET_PIXELS_NEXT = "PHOTOS/SET_PIXELS_NEXT";
 const SET_PIXELS_NEW = "PHOTOS/SET_PIXELS_NEW";
+const TOGGLE_NEXT_IS_FETCHING = "TOGGLE_NEXT_IS_FETCHING"
 
 let initialState = {
   pixels: [],
   pixelsNext: [],
   isFetching: true,
+  isNextFetching:false,
 };
 
 const photosPageReducer = (state = initialState, action) => {
@@ -29,6 +31,9 @@ const photosPageReducer = (state = initialState, action) => {
 
     case TOGGLE_IS_FETCHING: {
       return { ...state, isFetching: action.isFetching };
+    }
+    case TOGGLE_NEXT_IS_FETCHING: {
+      return { ...state, isNextFetching: action.isFetching };
     }
     default:
       return state;
@@ -49,27 +54,28 @@ export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
   isFetching,
 });
+export const toggleNextIsFetching = (isFetching) => ({
+  type: TOGGLE_NEXT_IS_FETCHING,
+  isFetching,
+});
+
 
 export const requestPixels = () => {
   return async (dispatch) => {
     dispatch(toggleIsFetching(true));
     let response = await pixelsAPI.getPixelsAPI();
     dispatch(toggleIsFetching(false));
-    dispatch(toggleIsFetching(true));
     dispatch(setPixels(response.data.photos));
     dispatch(setPixelsNext(response.data.next_page));
-    dispatch(toggleIsFetching(false));
   };
 };
 export const requestPixelsNew = () => {
   return async (dispatch) => {
-    dispatch(toggleIsFetching(true));
+    dispatch(toggleNextIsFetching(true));
     let responseNextPage = await pixelsAPI.getPixelsAPINext();
-    dispatch(toggleIsFetching(false));
-    dispatch(toggleIsFetching(true));
+    dispatch(toggleNextIsFetching(false));
     dispatch(setPixelsNew(responseNextPage.data.photos));
     dispatch(setPixelsNext(responseNextPage.data.next_page));
-    dispatch(toggleIsFetching(false));
   };
 };
 

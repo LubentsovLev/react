@@ -1038,7 +1038,7 @@ export const toggleIsFetching = (isFetching) => ({
 
 function getToken() {
   let access_token_my =
-  "access_token=BQD5jImWy73E0bXGSVY2qnQSGpJpRIHkSzjnK_yFu-N65g2aMVp425sCwtI1VFZE6G_AG1W7SAwwYE4lWjffNyZV_b66ZFtXkbTCzeAOTuQDOX2Y81L40IZZuqH0R_cKDnTl-rDGhsPE0lucqxBBUDmMGCRBlMo&token_type=Bearer&expires_in=3600"
+    "access_token=BQBdJ09ZJIb9Yaa0lTDvYnzB4JanSI-7MM0dJnb6wqEu4Dg1LwXDvxV01s88MGEJwfmG7nHvWJTzRHsY2BlbAbIP7RKS479fcetaAa9awz5rolx7fwdP4ow7uyVWH6gA57JgGB16nUhhR706nA9Xjosz24U1QLI&token_type=Bearer&expires_in=3600";
   let token = access_token_my;
   let tokend = window.location.hash.substr(1);
   if (token) {
@@ -1082,6 +1082,7 @@ const getSpotifyPlaylist = () => {
 export const getAlbum = (album) => {
   return async (dispatch) => {
     dispatch(toggleIsFetching(true));
+    dispatch(requestAlbum(album));
     let response = await getSpotifyPlaylist();
     dispatch(toggleIsFetching(false));
     dispatch(setAlbumData(response.data.tracks.items));

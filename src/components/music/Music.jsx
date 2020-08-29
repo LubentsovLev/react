@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import s from "./Music.module.css";
-import preaudio from "../../assets/G-Eazy_Free_Porn,_Cheap_Drugs_(Official Music Video).mp3"
+import preaudio from "../../assets/G-Eazy_Free_Porn,_Cheap_Drugs_(Official Music Video).mp3";
+import Track from "./Track";
 
 const Music = (props) => {
-  let pagesCount = Math.ceil(props.totalMusicCount / props.pageSize);
-
-  let pages = [];
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
-  }
   let [showTracks, setShowTracks] = useState("");
   let [showName, setShowName] = useState("");
   //showTracks = preaudio
@@ -42,34 +37,8 @@ const Music = (props) => {
           ))}
         </div>
       </div>
-      <div className={s.photos__inner}>
-        {props.music.map((u) => (
-          <div className={s.photo__inner} key={u.id}>
-            <div className={s.info}>
-              <a href={u.external_urls.spotify} className={s.album}>
-                {u.name}
-              </a>
-              <div className={s.artist__inner}>
-                {u.artists.map((a) => (
-                  <a
-                    key={a.id}
-                    className={s.artist}
-                    href={a.external_urls.spotify}
-                  >
-                    {a.name}
-                  </a>
-                ))}
-              </div>
-              <a
-                className={s.btn}
-                onClick={() => (props.requestAlbum(u.href), props.getAlbum())}
-              >
-                tracks
-              </a>
-            </div>
-            <img className={s.photo__photo} src={u.images[0].url} alt="" />
-          </div>
-        ))}
+      <div className={s.tracks__inner}>
+        <Track music={props.music} getAlbum={props.getAlbum} />
       </div>
       <div className={s.track}>
         <span className={s.track_name}>{showName}</span>

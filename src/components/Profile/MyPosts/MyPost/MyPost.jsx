@@ -1,15 +1,13 @@
 import React from "react";
 import s from "./MyPost.module.css";
+import logo from "../../../../assets/img/logo.svg";
 
 const MyPost = (props) => {
   let img = props.img;
   return (
     <div className={s.item}>
       <div className={s.logo__inner}>
-        <img
-          src={img}
-          alt=""
-        />
+        <img src={img ? img : logo} alt="" />
         <h1>{props.post}</h1>
       </div>
 

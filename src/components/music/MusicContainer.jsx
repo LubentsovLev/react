@@ -1,10 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  requestMusic,
-  requestAlbum,
-  getAlbum,
-} from "../../redux/musicPage_reducer";
+import { requestMusic, getAlbum } from "../../redux/musicPage_reducer";
 import Music from "./Music";
 import Preloader from "../common/preloader/preloader";
 import * as axios from "axios";
@@ -22,7 +18,6 @@ class MusicContainer extends React.Component {
           music={this.props.music}
           albumData={this.props.albumData}
           requestMusic={this.props.requestMusic}
-          requestAlbum={this.props.requestAlbum}
           getAlbum={this.props.getAlbum}
           track={this.props.track}
         />
@@ -42,6 +37,5 @@ const mapSateToProps = (state) => {
 
 export default connect(mapSateToProps, {
   requestMusic,
-  requestAlbum,
   getAlbum,
 })(MusicContainer);

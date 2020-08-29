@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import userPhoto from "../../assets/img/pinkman.jpg";
+import userPhoto from "../../assets/img/logo.svg";
 import s from "./Users.module.css";
 import { NavLink, Redirect } from "react-router-dom";
 import Preloader from "../common/preloader/preloader";

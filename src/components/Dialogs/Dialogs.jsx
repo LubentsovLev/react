@@ -5,12 +5,11 @@ import { Redirect } from "react-router-dom";
 import DialogContact from "./DialogContact/DialogContact";
 import { reduxForm, Field } from "redux-form";
 import { Textarea } from "../common/formsControls/formsControls";
-import { required,maxLengthCreator } from "../../utils/validators/validators";
+import { required, maxLengthCreator } from "../../utils/validators/validators";
 
-let maxLength = maxLengthCreator(50);
+let maxLength = maxLengthCreator(100);
 
 const DialogsForm = (props) => {
-
   return (
     <form className={s.textarea__inner} onSubmit={props.handleSubmit}>
       <Field

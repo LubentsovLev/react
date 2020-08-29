@@ -20,6 +20,7 @@ class PhotosContainer extends React.Component {
           requestPixelsNext={this.props.requestPixelsNext}
           requestPixelsNew={this.props.requestPixelsNew}
           isFetching={this.props.isFetching}
+          isNextFetching={this.props.isNextFetching}
           requestPixels={this.props.requestPixels}
         />
       </>
@@ -31,6 +32,7 @@ const mapSateToProps = (state) => {
   return {
     pixels: state.photosPage.pixels,
     isFetching: state.photosPage.isFetching,
+    isNextFetching: state.photosPage.isNextFetching,
   };
 };
 

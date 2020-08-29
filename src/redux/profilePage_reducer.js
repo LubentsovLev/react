@@ -18,35 +18,33 @@ let initialState = {
   myPostInfo: [
     {
       id: 1,
-      post: "lorem lorem post",
+      post: "post",
       message: "lorem lorem lorem lorem",
-      img: "https://png-library.net/images/obama-face-png-6.png",
+      img: "https://novorossia.su/sites/default/files/trump.jpg",
       likecount: "33",
       dislikecount: "5",
     },
     {
       id: 2,
-      post: "lorem lorem post",
+      post: "post",
       message: "lorem lorem lorem ",
-      img:
-        "https://www.clipartmax.com/png/full/339-3393862_arnold-schwarzenegger-silhouette-clipart-arnold-schwarzenegger-arnold-schwarzenegger-face-drawing.png",
+      img: "",
       likecount: "20",
       dislikecount: "533",
     },
     {
       id: 3,
-      post: "lorem lorem post",
+      post: "post",
       message: "lorem lorem ",
-      img:
-        "https://img2.freepng.ru/20180701/ypf/kisspng-elvis-presley-stencil-silhouette-art-5b38fae058b3a5.1073563015304608963633.jpg",
+      img: "",
       likecount: "20",
       dislikecount: "5",
     },
     {
       id: 4,
-      post: "lorem lorem post",
+      post: "post",
       message: "lorem ",
-      img: "https://data.whicdn.com/images/315945007/original.png",
+      img: "",
       likecount: "20",
       dislikecount: "5",
     },
@@ -79,10 +77,13 @@ const profilePageReducer = (state = initialState, action) => {
       return { ...state, status: action.status };
     }
     case DELETE_POST: {
-      return { ...state, myPostInfo: state.myPostInfo.filter( p => p.id != action.postId) };
+      return {
+        ...state,
+        myPostInfo: state.myPostInfo.filter((p) => p.id != action.postId),
+      };
     }
     case SAVE_PHOTOS_SUCCESS: {
-      return { ...state, profile : {...state.profile, photos:action.photos}  };
+      return { ...state, profile: { ...state.profile, photos: action.photos } };
     }
     default:
       return state;
@@ -92,7 +93,7 @@ const profilePageReducer = (state = initialState, action) => {
 export const addPostActionCreator = (myPostText) => {
   return {
     type: ADD_POST,
-    myPostText
+    myPostText,
   };
 };
 export const setUserProfile = (profile) => {
@@ -119,9 +120,9 @@ export const savePhotoSuccess = (photos) => {
     photos,
   };
 };
-  
 
 export const getUserProfile = (userId) => async (dispath) => {
+  debugger;
   let response = await usersAPI.getProfile(userId);
   dispath(setUserProfile(response.data));
 };
@@ -131,12 +132,11 @@ export const getUserStatus = (userId) => async (dispath) => {
 };
 export const updateUserStatus = (status) => async (dispath) => {
   try {
-  let response = await profileAPI.updateUserStatus(status);
-  if (response.data.resultCode === 0) {
-    dispath(setStatus(status));
-  }
-  }catch(error){
-  }
+    let response = await profileAPI.updateUserStatus(status);
+    if (response.data.resultCode === 0) {
+      dispath(setStatus(status));
+    }
+  } catch (error) {}
 };
 export const savePhoto = (file) => async (dispath) => {
   let response = await profileAPI.saveProto(file);
@@ -144,14 +144,14 @@ export const savePhoto = (file) => async (dispath) => {
     dispath(savePhotoSuccess(response.data.data.photos));
   }
 };
-export const saveProfile = (Profile) => async (dispath,getState) => {
-  const userId =  getState().auth.userId;
+export const saveProfile = (Profile) => async (dispath, getState) => {
+  const userId = getState().auth.userId;
   const response = await profileAPI.saveProfile(Profile);
   if (response.data.resultCode === 0) {
     dispath(getUserProfile(userId));
   } else {
-    dispath(stopSubmit("edit-profile",{_error:   response.data.messages[0]  }))
-    return Promise.reject(response.data.messages[0])
+    dispath(stopSubmit("edit-profile", { _error: response.data.messages[0] }));
+    return Promise.reject(response.data.messages[0]);
   }
 };
 

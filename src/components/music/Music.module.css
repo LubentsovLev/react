@@ -1,7 +1,7 @@
 .selected {
   font-weight: 700;
 }
-.photos__inner {
+.tracks__inner {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   margin-right: -5px;
   margin-bottom: 74px;
 }
-.photo__inner {
+.music__inner {
   width: 300px;
   position: relative;
   display: flex;
@@ -19,13 +19,10 @@
   justify-content: center;
   margin-right: 5px;
   margin-bottom: 5px;
-  
-
 }
-.photo__inner:nth-last-child(1){
-  
+.music__inner:nth-last-child(1) {
 }
-.photo__photo {
+.music__music {
   max-width: 100%;
   display: block;
 }
@@ -81,7 +78,7 @@
   display: none;
 }
 .btn {
-  padding: 7px  ;
+  padding: 7px;
   border: none;
   cursor: pointer;
   background-color: #1db954;
@@ -101,7 +98,7 @@
   transition: all 0.2s;
   color: #fff;
 }
-.tracks:hover{
+.tracks:hover {
   background-color: #ff9de5;
   color: #fff;
 }
@@ -111,8 +108,7 @@
   justify-content: space-between;
   padding: 4px 4px;
   cursor: pointer;
-  border-radius:5px;
-
+  border-radius: 5px;
 }
 .track_list {
   z-index: 5;
@@ -123,7 +119,7 @@
   top: 26%;
   right: 0;
   padding: 0 10px;
-  border-radius:5px;
+  border-radius: 5px;
 }
 .tr__inner {
   max-width: 1000px;
@@ -145,23 +141,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  
 }
-.track_name{
+.track_name {
   color: rgb(255, 255, 255);
   margin-right: 10px;
-
 }
-audio{
+.music__inner audio {
   height: 28px;
   width: 100%;
   max-width: 297px;
   outline: none;
 }
-::-webkit-scrollbar { width: 3px; height: 3px;}
-::-webkit-scrollbar-button { width: 0px; height: 0;  background-color: transparent; }
-::-webkit-scrollbar-track {  background-color: #999;}
-::-webkit-scrollbar-track-piece { background-color: #fff}
-::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-::-webkit-scrollbar-corner { background-color: #999;}
-::-webkit-resizer { background-color: #666;}

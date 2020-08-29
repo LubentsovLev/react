@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Users.module.css";
-import Paginator from "../common/formsControls/Pagintor/Paginator";
+import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
 
 let Users = ({
