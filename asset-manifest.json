@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react/static/css/main.58d0dc32.chunk.css",
-    "main.js": "/react/static/js/main.7b2342ca.chunk.js",
-    "main.js.map": "/react/static/js/main.7b2342ca.chunk.js.map",
-    "runtime-main.js": "/react/static/js/runtime-main.0b44b5b9.js",
-    "runtime-main.js.map": "/react/static/js/runtime-main.0b44b5b9.js.map",
+    "main.js": "/react/static/js/main.dba5883b.chunk.js",
+    "main.js.map": "/react/static/js/main.dba5883b.chunk.js.map",
+    "runtime-main.js": "/react/static/js/runtime-main.131b0867.js",
+    "runtime-main.js.map": "/react/static/js/runtime-main.131b0867.js.map",
     "static/js/2.d4b5a06c.chunk.js": "/react/static/js/2.d4b5a06c.chunk.js",
     "static/js/2.d4b5a06c.chunk.js.map": "/react/static/js/2.d4b5a06c.chunk.js.map",
     "static/css/3.817c1cf0.chunk.css": "/react/static/css/3.817c1cf0.chunk.css",
-    "static/js/3.f591368d.chunk.js": "/react/static/js/3.f591368d.chunk.js",
-    "static/js/3.f591368d.chunk.js.map": "/react/static/js/3.f591368d.chunk.js.map",
+    "static/js/3.ee6d880d.chunk.js": "/react/static/js/3.ee6d880d.chunk.js",
+    "static/js/3.ee6d880d.chunk.js.map": "/react/static/js/3.ee6d880d.chunk.js.map",
     "static/css/4.72b22e5f.chunk.css": "/react/static/css/4.72b22e5f.chunk.css",
     "static/js/4.8c1beab2.chunk.js": "/react/static/js/4.8c1beab2.chunk.js",
     "static/js/4.8c1beab2.chunk.js.map": "/react/static/js/4.8c1beab2.chunk.js.map",
     "index.html": "/react/index.html",
-    "precache-manifest.fc5d418243db31ebe4d033bae878817a.js": "/react/precache-manifest.fc5d418243db31ebe4d033bae878817a.js",
+    "precache-manifest.c6df2339696163a0e00cb476cdb6c31b.js": "/react/precache-manifest.c6df2339696163a0e00cb476cdb6c31b.js",
     "service-worker.js": "/react/service-worker.js",
     "static/css/3.817c1cf0.chunk.css.map": "/react/static/css/3.817c1cf0.chunk.css.map",
     "static/css/4.72b22e5f.chunk.css.map": "/react/static/css/4.72b22e5f.chunk.css.map",
@@ -28,9 +28,9 @@
     "static/media/twitter.svg": "/react/static/media/twitter.182d5ef4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0b44b5b9.js",
+    "static/js/runtime-main.131b0867.js",
     "static/js/2.d4b5a06c.chunk.js",
     "static/css/main.58d0dc32.chunk.css",
-    "static/js/main.7b2342ca.chunk.js"
+    "static/js/main.dba5883b.chunk.js"
   ]
 }
