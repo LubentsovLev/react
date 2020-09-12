@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.58d0dc32.chunk.css",
-    "main.js": "/react/static/js/main.6aef33b4.chunk.js",
-    "main.js.map": "/react/static/js/main.6aef33b4.chunk.js.map",
-    "runtime-main.js": "/react/static/js/runtime-main.0b44b5b9.js",
-    "runtime-main.js.map": "/react/static/js/runtime-main.0b44b5b9.js.map",
-    "static/js/2.d4b5a06c.chunk.js": "/react/static/js/2.d4b5a06c.chunk.js",
-    "static/js/2.d4b5a06c.chunk.js.map": "/react/static/js/2.d4b5a06c.chunk.js.map",
+    "main.css": "/react/static/css/main.9798840b.chunk.css",
+    "main.js": "/react/static/js/main.1a1ba445.chunk.js",
+    "main.js.map": "/react/static/js/main.1a1ba445.chunk.js.map",
+    "runtime-main.js": "/react/static/js/runtime-main.8042c230.js",
+    "runtime-main.js.map": "/react/static/js/runtime-main.8042c230.js.map",
+    "static/js/2.3b563ec6.chunk.js": "/react/static/js/2.3b563ec6.chunk.js",
+    "static/js/2.3b563ec6.chunk.js.map": "/react/static/js/2.3b563ec6.chunk.js.map",
     "static/css/3.817c1cf0.chunk.css": "/react/static/css/3.817c1cf0.chunk.css",
-    "static/js/3.f591368d.chunk.js": "/react/static/js/3.f591368d.chunk.js",
-    "static/js/3.f591368d.chunk.js.map": "/react/static/js/3.f591368d.chunk.js.map",
+    "static/js/3.4608d8d4.chunk.js": "/react/static/js/3.4608d8d4.chunk.js",
+    "static/js/3.4608d8d4.chunk.js.map": "/react/static/js/3.4608d8d4.chunk.js.map",
     "static/css/4.72b22e5f.chunk.css": "/react/static/css/4.72b22e5f.chunk.css",
-    "static/js/4.8c1beab2.chunk.js": "/react/static/js/4.8c1beab2.chunk.js",
-    "static/js/4.8c1beab2.chunk.js.map": "/react/static/js/4.8c1beab2.chunk.js.map",
+    "static/js/4.96fbdc18.chunk.js": "/react/static/js/4.96fbdc18.chunk.js",
+    "static/js/4.96fbdc18.chunk.js.map": "/react/static/js/4.96fbdc18.chunk.js.map",
     "index.html": "/react/index.html",
-    "precache-manifest.59c0ac51873cb9fcd52be0db34b195ed.js": "/react/precache-manifest.59c0ac51873cb9fcd52be0db34b195ed.js",
+    "precache-manifest.6a257c5c423cb8fa18b3a5374d0cbacd.js": "/react/precache-manifest.6a257c5c423cb8fa18b3a5374d0cbacd.js",
     "service-worker.js": "/react/service-worker.js",
     "static/css/3.817c1cf0.chunk.css.map": "/react/static/css/3.817c1cf0.chunk.css.map",
     "static/css/4.72b22e5f.chunk.css.map": "/react/static/css/4.72b22e5f.chunk.css.map",
-    "static/css/main.58d0dc32.chunk.css.map": "/react/static/css/main.58d0dc32.chunk.css.map",
-    "static/js/2.d4b5a06c.chunk.js.LICENSE.txt": "/react/static/js/2.d4b5a06c.chunk.js.LICENSE.txt",
+    "static/css/main.9798840b.chunk.css.map": "/react/static/css/main.9798840b.chunk.css.map",
+    "static/js/2.3b563ec6.chunk.js.LICENSE.txt": "/react/static/js/2.3b563ec6.chunk.js.LICENSE.txt",
     "static/media/G-Eazy_Free_Porn,_Cheap_Drugs_(Official Music Video).mp3": "/react/static/media/G-Eazy_Free_Porn,_Cheap_Drugs_(Official Music Video).7903c044.mp3",
     "static/media/loader.svg": "/react/static/media/loader.d1bc020d.svg",
     "static/media/logo.svg": "/react/static/media/logo.cd3014db.svg",
@@ -28,9 +28,9 @@
     "static/media/twitter.svg": "/react/static/media/twitter.182d5ef4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0b44b5b9.js",
-    "static/js/2.d4b5a06c.chunk.js",
-    "static/css/main.58d0dc32.chunk.css",
-    "static/js/main.6aef33b4.chunk.js"
+    "static/js/runtime-main.8042c230.js",
+    "static/js/2.3b563ec6.chunk.js",
+    "static/css/main.9798840b.chunk.css",
+    "static/js/main.1a1ba445.chunk.js"
   ]
 }
