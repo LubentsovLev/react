@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.075585a7.chunk.css",
-    "main.js": "/react/static/js/main.9228f972.chunk.js",
-    "main.js.map": "/react/static/js/main.9228f972.chunk.js.map",
+    "main.css": "/react/static/css/main.c00a6df8.chunk.css",
+    "main.js": "/react/static/js/main.34890188.chunk.js",
+    "main.js.map": "/react/static/js/main.34890188.chunk.js.map",
     "runtime-main.js": "/react/static/js/runtime-main.b9facafc.js",
     "runtime-main.js.map": "/react/static/js/runtime-main.b9facafc.js.map",
     "static/js/2.f0cf4e43.chunk.js": "/react/static/js/2.f0cf4e43.chunk.js",
@@ -14,11 +14,11 @@
     "static/js/4.96fbdc18.chunk.js": "/react/static/js/4.96fbdc18.chunk.js",
     "static/js/4.96fbdc18.chunk.js.map": "/react/static/js/4.96fbdc18.chunk.js.map",
     "index.html": "/react/index.html",
-    "precache-manifest.7189d5011d6afaf45356f671a8486def.js": "/react/precache-manifest.7189d5011d6afaf45356f671a8486def.js",
+    "precache-manifest.dfb3246258e623500fc67acd0cd1c03b.js": "/react/precache-manifest.dfb3246258e623500fc67acd0cd1c03b.js",
     "service-worker.js": "/react/service-worker.js",
     "static/css/3.817c1cf0.chunk.css.map": "/react/static/css/3.817c1cf0.chunk.css.map",
     "static/css/4.72b22e5f.chunk.css.map": "/react/static/css/4.72b22e5f.chunk.css.map",
-    "static/css/main.075585a7.chunk.css.map": "/react/static/css/main.075585a7.chunk.css.map",
+    "static/css/main.c00a6df8.chunk.css.map": "/react/static/css/main.c00a6df8.chunk.css.map",
     "static/js/2.f0cf4e43.chunk.js.LICENSE.txt": "/react/static/js/2.f0cf4e43.chunk.js.LICENSE.txt",
     "static/media/G-Eazy_Free_Porn,_Cheap_Drugs_(Official Music Video).mp3": "/react/static/media/G-Eazy_Free_Porn,_Cheap_Drugs_(Official Music Video).7903c044.mp3",
     "static/media/loader.svg": "/react/static/media/loader.d1bc020d.svg",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.b9facafc.js",
     "static/js/2.f0cf4e43.chunk.js",
-    "static/css/main.075585a7.chunk.css",
-    "static/js/main.9228f972.chunk.js"
+    "static/css/main.c00a6df8.chunk.css",
+    "static/js/main.34890188.chunk.js"
   ]
 }
