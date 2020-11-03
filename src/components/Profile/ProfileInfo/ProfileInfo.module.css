@@ -1,14 +1,37 @@
 .info {
   padding: 30px 0;
-  max-width: 1000px;
+  max-width: 1600px;
   margin: 0 auto;
+}
+.info form {
+  width: 100%;
+}
+.head__inner {
+  padding: 10px;
+  border-radius: 15px;
+}
+.bottom_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .bottom_inner{
+    min-width: 200px;
+  }
 }
 .content__img {
   margin: 0 auto;
   width: auto;
   height: auto;
-  max-height: 300px;
+  min-height: 300px;
   border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .logo__img_img {
   width: 70px;
@@ -44,7 +67,7 @@
   margin: 10px 0;
   border-radius: 15px;
   color: rgb(48, 46, 46);
-  max-width: 200px;
+
   height: auto;
   text-transform: uppercase;
   font-size: 13px;
@@ -118,6 +141,7 @@
 .input__file_button_text {
   line-height: 1;
   margin-top: 1px;
+  font-family: sans-serif;
 }
 
 .input__file_button {
@@ -135,7 +159,38 @@
   justify-content: flex-start;
   border-radius: 15px;
   cursor: pointer;
+  margin: auto;
 }
-.forms__info {
-  max-width: 500px;
+.prof_input {
+  transition: 0.3s;
+  margin: 5px 0;
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(189, 247, 255);
+  outline: none;
+}
+.input__inner {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.im__text strong {
+  font-size: 20px;
+  color: rgb(56, 232, 255);
+}
+.im__text {
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.im__text input {
+  text-align: center;
+}
+.im__text span {
 }

@@ -122,7 +122,6 @@ export const savePhotoSuccess = (photos) => {
 };
 
 export const getUserProfile = (userId) => async (dispath) => {
-  debugger;
   let response = await usersAPI.getProfile(userId);
   dispath(setUserProfile(response.data));
 };

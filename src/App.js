@@ -18,10 +18,11 @@ import { compose } from "redux";
 import Preloader from "./components/common/preloader/preloader";
 import store from "./redux/redux-store";
 import { WithSuspense } from "./hoc/WithSuspense";
-//import PhotosContainer from "./components/photos/PhotosContainer";
 import Comments from "./components/comments/Comments";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+//import PhotosContainer from "./components/photos/PhotosContainer";
+// import Slider from "./components/slider/Slider";
 //import MusicContainer from "./components/music/MusicContainer";
 
 const MusicContainer = React.lazy(() =>
@@ -31,6 +32,7 @@ const MusicContainer = React.lazy(() =>
 const PhotosContainer = React.lazy(() =>
   import("./components/photos/PhotosContainer")
 );
+const Slider = React.lazy(() => import("./components/slider/Slider"));
 
 class App extends React.Component {
   catchAllUnhandledErrors = (promiseRejectionEvent) => {
@@ -64,6 +66,7 @@ class App extends React.Component {
             <Route path="/photos" render={WithSuspense(PhotosContainer)} />
             <Route path="/comments" render={() => <Comments />} />
             <Route path="/users" render={() => <UsersContainer />} />
+            <Route path={"/slider"} render={WithSuspense(Slider)} />
             <Route exact path="/login" render={() => <Login />} />
             <Route exact path="*" render={() => <div>404 NOT FOUND</div>} />
           </Switch>
@@ -84,6 +87,7 @@ let AppContainer = compose(
 const MainApp = (props) => {
   return (
     // <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
+    // <HashRouter></HashRouter>
     <HashRouter>
       <Provider store={store}>
         <AppContainer />

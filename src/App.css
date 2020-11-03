@@ -7,7 +7,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: rubik;
+  font-family: Poppins;
   background-color: #fff;
   color: #48384c;
 }
@@ -32,6 +32,9 @@ h6,
 p {
   margin: 0;
 }
+input,button,img,a,textarea{
+  outline: none;
+}
 
 .App {
   text-align: center;
@@ -50,6 +53,12 @@ p {
 .nav__active{
   transform: translateX(100%) !important;
 }
+.animSlider{
+  transition: 1s;
+  opacity: 1 !important;
+  
+}
+
 ::-webkit-scrollbar { width: 5px; height: 3px;}
 ::-webkit-scrollbar-button { width: 5px; height: 0;  background-color: #c4dbf8; }
 ::-webkit-scrollbar-track {  background-color: #999;}

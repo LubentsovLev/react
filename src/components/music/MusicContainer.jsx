@@ -3,12 +3,13 @@ import { connect } from "react-redux";
 import { requestMusic, getAlbum } from "../../redux/musicPage_reducer";
 import Music from "./Music";
 import Preloader from "../common/preloader/preloader";
-import * as axios from "axios";
 
 class MusicContainer extends React.Component {
+  
   componentDidMount() {
     this.props.requestMusic();
   }
+  
 
   render() {
     return (

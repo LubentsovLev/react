@@ -83,4 +83,6 @@
 .btn__inner{
   display: flex;
 }
-
+.prel{
+  margin-top: -50px;
+}

@@ -1037,8 +1037,9 @@ export const toggleIsFetching = (isFetching) => ({
 });
 
 function getToken() {
+  debugger;
   let access_token_my =
-    "access_token=BQBdJ09ZJIb9Yaa0lTDvYnzB4JanSI-7MM0dJnb6wqEu4Dg1LwXDvxV01s88MGEJwfmG7nHvWJTzRHsY2BlbAbIP7RKS479fcetaAa9awz5rolx7fwdP4ow7uyVWH6gA57JgGB16nUhhR706nA9Xjosz24U1QLI&token_type=Bearer&expires_in=3600";
+    "access_token=BQAKjIj-Dfyq8fwEUnQPyFhJjXuUE_8PPNKImqznSWoGzSecrWzWWjpBMfGWZtMLc2q-Mwl7x-xePLR0dKqvpP1FgrSdwseRwNwbiQq5namZrZ7iSMFYYbOABsE1tCTtYIQMCrGf7_9V3sN1fE1vjByah0DLcvk&token_type=Bearer&expires_in=3600";
   let token = access_token_my;
   let tokend = window.location.hash.substr(1);
   if (token) {
@@ -1085,6 +1086,8 @@ export const getAlbum = (album) => {
     dispatch(requestAlbum(album));
     let response = await getSpotifyPlaylist();
     dispatch(toggleIsFetching(false));
+    // let g =dispatch(setAlbumData(response.data.tracks.items));
+    // debugger
     dispatch(setAlbumData(response.data.tracks.items));
   };
 };

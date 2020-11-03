@@ -9,6 +9,9 @@ let renderEntireTree = (state) => {
   ReactDOM.render(<MainApp />, document.getElementById("root"));
 };
 
+let g = store.getState()
+
+
 renderEntireTree(store.getState());
 
 // If you want your app to work offline and load faster, you can change

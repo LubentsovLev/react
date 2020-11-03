@@ -73,6 +73,15 @@ class Nav extends React.Component {
                 Users
               </NavLink>
             </div>
+            <div className={s.nav__item + " " + s.nav__item__last}>
+              <NavLink
+                className={s.nav__link}
+                to="/slider"
+                activeClassName={s.active_ln}
+              >
+                Slider
+              </NavLink>
+            </div>
           </div>
         </nav>
       </div>

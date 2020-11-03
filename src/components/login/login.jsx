@@ -34,7 +34,7 @@ const LoginForm = (props) => {
           <span className={s.form_summary_error}>{props.error}</span>
         </div>
       )}
-      <div className={s.sign__inner}>
+      {/* <div className={s.sign__inner}>
         <h6>Do not have account?</h6>
         <a
           className={s.sign}
@@ -42,7 +42,7 @@ const LoginForm = (props) => {
         >
           sign up
         </a>
-      </div>
+      </div> */}
       <div className="">
         <button>Submit </button>
       </div>
@@ -68,9 +68,11 @@ const Login = (props) => {
   }
 
   return (
-    <div className="">
-      <h1>login</h1>
-      <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+    <div className={s.main__inner}>
+      <div className={s.inn}>
+        <h1>login</h1>
+        <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+      </div>
     </div>
   );
 };

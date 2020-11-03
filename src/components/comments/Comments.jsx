@@ -18,7 +18,7 @@ const CommentsForm = (props) => {
         name={"fullName"}
         placeholder="Write message"
         component={Textarea}
-        validate={[maxLength]}
+        validate={[required,maxLength]}
       ></Field>
       <button className={s.textarea}> Send comment</button>
     </form>

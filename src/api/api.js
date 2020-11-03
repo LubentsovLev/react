@@ -91,7 +91,7 @@ export const musicAPI = {
   
 }
 export const pixelsAPI = {
-  getPixelsAPI(pageSize = 30) {
+  getPixelsAPI(pageSize = 12) {
     return axios.get(`https://api.pexels.com/v1/search?query=nature&per_page=${pageSize}`, {
       headers: {
         Authorization:

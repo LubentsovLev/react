@@ -6,6 +6,10 @@ import Photo from "./Photo";
 const Photos = (props) => {
   const click = () => {
     props.requestPixelsNew();
+      window.scrollTo({
+        top: 100000000,
+        behavior: "smooth"
+    });
   };
   useEffect(() => {}, [props.pixels]);
   return (
@@ -13,12 +17,17 @@ const Photos = (props) => {
       <div className={s.photos__inner}>
         <Photo pixels={props.pixels} />
       </div>
-      {props.isNextFetching ? <Preloader /> : null}
-      <div className={s.btn__inner}>
-        <a onClick={() => click()} className={s.btn}>
-          load next page
-        </a>
-      </div>
+      {props.isFetching ? null : props.isNextFetching ? (
+        <div className={s.prel}>
+          <Preloader />
+        </div>
+      ) : (
+        <div className={s.btn__inner}>
+          <a onClick={() => click()} className={s.btn}>
+            load next page
+          </a>
+        </div>
+      )}
     </div>
   );
 };

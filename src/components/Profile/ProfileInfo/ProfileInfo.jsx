@@ -27,11 +27,18 @@ const ProfileInfo = (props) => {
 
   return (
     <div className={s.info}>
-      <div>
-        <img
+      <div className={s.head__inner}>
+        <div
           className={s.content__img}
-          src={props.profile.photos.large || userPhoto}
-        ></img>
+          style={{
+            backgroundImage: `url(${props.profile.photos.large || userPhoto})`,
+          }}
+        >
+          {/* <img
+            className={s.content__img}
+            src={props.profile.photos.large || userPhoto}
+          ></img> */}
+        </div>
         {props.isOwner && (
           <div className={s.input__wrapper}>
             <input
@@ -56,27 +63,28 @@ const ProfileInfo = (props) => {
           </div>
         )}
       </div>
-      {editMode ? (
-        <ProfileDataForm
-          initialValues={props.profile}
-          profile={props.profile}
-          props={props}
-          onSubmit={onSubmit}
+      <div className={s.bottom_inner}>
+        <ProfileStatuWithHocks
+          status={props.status}
+          updateUserStatus={props.updateUserStatus}
         />
-      ) : (
-        <ProfileData
-          props={props}
-          goToEditMode={() => {
-            seteditMode(true);
-          }}
-          isOwner={props.isOwner}
-        />
-      )}
-
-      <ProfileStatuWithHocks
-        status={props.status}
-        updateUserStatus={props.updateUserStatus}
-      />
+        {editMode ? (
+          <ProfileDataForm
+            initialValues={props.profile}
+            profile={props.profile}
+            props={props}
+            onSubmit={onSubmit}
+          />
+        ) : (
+          <ProfileData
+            props={props}
+            goToEditMode={() => {
+              seteditMode(true);
+            }}
+            isOwner={props.isOwner}
+          />
+        )}
+      </div>
 
       {/* <div className={s.info__inner}>
         <div className={s.logo__img}>
